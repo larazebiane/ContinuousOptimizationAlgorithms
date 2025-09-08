@@ -59,4 +59,4 @@ See the `test_bqp_pg.m` script for a usage example with random problem data.
 
 ## License
 
-This code is licensed under the [MIT License](../../LICENSE).
+This code is licensed under the [MIT License](../LICENSE). 
