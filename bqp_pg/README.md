@@ -2,9 +2,9 @@
 
 This folder contains a MATLAB implementation of a **projected gradient method** for solving bound-constrained quadratic optimization problems of the form:
 
-\[
+$$
 \min_{x \in \mathbb{R}^n} \quad q(x) = c^T x + \frac{1}{2} x^T H x \quad \text{subject to} \quad \ell \leq x \leq u
-\]
+$$
 
 where \(H\) is symmetric positive definite, and \(\ell, u\) are the lower and upper bounds.
 
