@@ -28,6 +28,15 @@ where $ f: \mathbb{R}^n \to \mathbb{R} $ is a twice-differentiable objective fun
 
 ---
 
+## 📂 Files
+
+- `uncMIN.m`: Main unconstrained minimization solver supporting different direction strategies.
+- `cg_ls.m`: Conjugate gradient method for solving linear systems (used in Newton-CG).
+- `ModNewton.m`: Modified Newton matrix constructor to ensure positive definiteness.
+- `README.md`: This file explaining the folder contents.
+
+---
+
 ## 📌 Usage
 
 ```matlab
