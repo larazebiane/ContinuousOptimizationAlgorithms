@@ -6,7 +6,7 @@ $$
 \min_{x \in \mathbb{R}^n} \quad q(x) = c^T x + \frac{1}{2} x^T H x \quad \text{subject to} \quad \ell \leq x \leq u
 $$
 
-where \(H\) is symmetric positive definite, and \(\ell, u\) are the lower and upper bounds.
+where $H$ is symmetric positive definite, and $\ell, u$ are the lower and upper bounds.
 
 ---
 
@@ -28,11 +28,11 @@ where \(H\) is symmetric positive definite, and \(\ell, u\) are the lower and up
 
 ### Inputs:
 
-- `c` — Coefficient vector (\(n \times 1\))
-- `H` — Symmetric positive definite matrix (\(n \times n\))
-- `l` — Lower bound vector (\(n \times 1\))
-- `u` — Upper bound vector (\(n \times 1\))
-- `x0` — Initial guess (\(n \times 1\))
+- `c` — Coefficient vector ($n \times 1$)
+- `H` — Symmetric positive definite matrix ($n \times n$)
+- `l` — Lower bound vector ($n \times 1$)
+- `u` — Upper bound vector ($n \times 1$)
+- `x0` — Initial guess ($n \times 1$)
 - `params` — Structure with fields:
   - `maxit`: Maximum iterations
   - `tol`: Convergence tolerance
