@@ -26,7 +26,7 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
 
 ```
 
-### Inputs:
+### 📥 Inputs:
 
 - `c` — Coefficient vector ($n \times 1$)
 - `H` — Symmetric positive definite matrix ($n \times n$)
@@ -39,7 +39,7 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
   - `ssm`: (0 or 1) Enable subspace acceleration
   - `printlevel`: (0 or 1) Display iteration info
 
-### Outputs:
+### 📤 Outputs:
 
 - `x` — Solution vector
 - `info` — Structure containing:
