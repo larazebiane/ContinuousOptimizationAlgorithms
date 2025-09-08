@@ -1,66 +1,84 @@
 function [p, info] = cg_ls(Hv_hand, g, params)
+%CG_LS Truncated Conjugate Gradient Method for Newton systems
+%
+%   [p, info] = cg_ls(Hv_hand, g, params)
+%
+%   Solves approximately: H * p = -g using truncated Conjugate Gradient.
+%
+%   INPUTS:
+%     Hv_hand   - Function handle to compute Hessian-vector product: Hv = Hv_hand(v)
+%     g         - Gradient vector
+%     params    - Struct with fields:
+%                   * tol        : Convergence tolerance (default 1e-8)
+%                   * maxiter    : Maximum iterations (default 500)
+%                   * printlevel : 0 = silent, 1 = show residuals (default 1)
+%
+%   OUTPUTS:
+%     p         - Computed search direction
+%     info      - Struct with fields:
+%                   * res    : Final residual norm
+%                   * iter   : Number of CG iterations
+%                   * status : -1 = negative curvature,
+%                               0 = converged,
+%                               1 = max iterations reached
 
+    % Set default parameters
+    default_params.tol = 1e-8;
+    default_params.maxiter = 500;
+    default_params.printlevel = 1;
 
-default_params.tol = 1e-8;
-default_params.maxiter = 500;
-default_params.printlevel = 1;  % No printing by default
-
-% Check number of input arguments
-if nargin < 3
-  % Use default parameters if optional arguments are missing
-  params = default_params;
-end 
-
-% Initialize variables
-p = zeros(size(g));
-r = g;
-s = -g;
-k = 0;
-info.status=0;
-
-% Loop until convergence or maximum iterations reached
-while norm(r) > params.tol*max(1,norm(g)) && k < params.maxiter
-  % Check for negative curvature
-  Hvs=Hv_hand(s); % Used so that we don't have to calculate Hv_hand(s) each time
-  if dot(s, Hvs) > 0
-    % Update step length
-    alpha = dot(r, r) / dot(s, Hvs);
-  else
-      info.status = -1;
-      
-    % Negative curvature encountered
-    if k == 0
-      % Special case: return negative gradient if k=0
-      p = -g;
-      return;
+    % Use default params if not provided
+    if nargin < 3
+        params = default_params;
     end
-    break;
-  end
-  
-  % Update iterate and residual
 
-  rprev = r;
-  p = p + alpha * s;
-  r = r + alpha * Hvs;
-  
-  % Update conjugate direction
-  beta = dot(r, r) / dot(rprev, rprev);
-  s = -r + beta * s;
-  
-  % Print information if required
-  if params.printlevel > 0
-    fprintf('Iteration: %d, Residual: %e\n', k+1, norm(r));
-  end
-  
-  % Update counters
-  k = k + 1;
-end
+    % Initialize variables
+    p = zeros(size(g));
+    r = g;
+    s = -g;
+    k = 0;
+    info.status = 0;
 
-% Set output parameters
-info.res = norm(r);
-info.iter = k;
-if k == params.maxiter
-  info.status = 1;
-end
+    % Main CG loop
+    while norm(r) > params.tol * max(1, norm(g)) && k < params.maxiter
+        Hvs = Hv_hand(s);  % Hessian-vector product
 
+        % Check for negative curvature
+        if dot(s, Hvs) > 0
+            % Compute step length
+            alpha = dot(r, r) / dot(s, Hvs);
+        else
+            info.status = -1;  % Negative curvature
+            if k == 0
+                % Return negative gradient if first iteration
+                p = -g;
+                return;
+            end
+            break;
+        end
+
+        % Update iterate and residual
+        r_prev = r;
+        p = p + alpha * s;
+        r = r + alpha * Hvs;
+
+        % Compute new conjugate direction
+        beta = dot(r, r) / dot(r_prev, r_prev);
+        s = -r + beta * s;
+
+        % Print info if enabled
+        if params.printlevel > 0
+            fprintf('  CG Iteration: %d, Residual: %.2e\n', k + 1, norm(r));
+        end
+
+        % Increment iteration counter
+        k = k + 1;
+    end
+
+    % Final outputs
+    info.res = norm(r);
+    info.iter = k;
+    if k == params.maxiter
+        info.status = 1;  % Max iterations reached
+    end
 end
