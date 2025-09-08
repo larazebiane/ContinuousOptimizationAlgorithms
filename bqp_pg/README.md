@@ -10,7 +10,7 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
 
 ---
 
-## Features
+## 🚀 Features
 
 - Implements an **inexact Cauchy step** strategy with a backtracking line search.
 - Supports optional **subspace acceleration** (based on active-set identification).
@@ -19,7 +19,7 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
 
 ---
 
-## Usage
+## 📌 Usage
 
 ```matlab
 [x, info] = bqp_pg(c, H, l, u, x0, params);
