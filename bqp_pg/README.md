@@ -19,6 +19,13 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
 
 ---
 
+## 📂 Files
+
+- `bqp_pg.m`: Main function implementing the projected gradient algorithm for BQP problems.
+- `README.md`: This file explaining the folder contents.
+
+---
+
 ## 📌 Usage
 
 ```matlab
