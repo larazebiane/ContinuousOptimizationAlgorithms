@@ -37,7 +37,7 @@ where $ f $ is twice continuously differentiable. The algorithm supports both:
 [x, info] = uncMIN_TR(fun_hands, x0, params);
 ```
 
-### Inputs:
+### 📥 Inputs:
 
 - `fun_hands` — A structure with the following function handles:
   - `f_hand(x)`: Computes the objective function \( f(x) \)
@@ -51,7 +51,7 @@ where $ f $ is twice continuously differentiable. The algorithm supports both:
   - `tol`: Convergence tolerance
   - `printlevel`: Verbosity level (0: silent, 1: print iteration info)
 
-### Outputs:
+### 📤 Outputs:
 
 - `x` — Final solution vector
 - `info` — A structure containing:
