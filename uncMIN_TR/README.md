@@ -25,9 +25,9 @@ where $ f $ is twice continuously differentiable. The algorithm supports both:
 
 ## 📂 Files
 
-- `uncMIN_TR.m`: Main trust-region algorithm
-- `cg_tr.m`: Steihaug Conjugate Gradient method for solving subproblems
-- `test_uncMIN_TR.m`: Example usage with a test function (optional)
+- `uncMIN_TR.m`: Main trust-region solver implementing various step types.
+- `cg_tr.m`: Conjugate gradient solver for trust-region subproblems (Steihaug CG method).
+- `README.md`: This file explaining the folder contents.
 
 ---
 
