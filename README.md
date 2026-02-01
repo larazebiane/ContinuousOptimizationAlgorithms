@@ -8,7 +8,7 @@ Welcome to this repository, which contains implementations of various optimizati
 
 This project provides MATLAB implementations of several classical optimization techniques, including:
 
-- Unconstrained minimization solvers using Newton and Conjugate Gradient methods.
+- Unconstrained minimization solvers using Newton and Conjugate Gradient methods. 
 - Trust-region methods for unconstrained optimization with advanced subproblem solvers.
 - Projected gradient methods for Binary Quadratic Programming problems.
 
