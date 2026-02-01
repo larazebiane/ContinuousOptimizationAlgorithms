@@ -10,7 +10,7 @@ This project provides MATLAB implementations of several classical optimization t
 
 - Unconstrained minimization solvers using Newton and Conjugate Gradient methods. 
 - Trust-region methods for unconstrained optimization with advanced subproblem solvers.
-- Projected gradient methods for Binary Quadratic Programming problems.
+- Projected gradient methods for Binary Quadratic Programming problems. 
 
 The algorithms are designed to be flexible, allowing easy experimentation with different line searches, step strategies, and Hessian approximations.
 
