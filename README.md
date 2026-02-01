@@ -19,7 +19,7 @@ The algorithms are designed to be flexible, allowing easy experimentation with d
 ## ⚙️ How to Use
 
 Each folder contains a main solver and supporting functions along with a README that explains the files and usage details.  
-Example usage scripts can be added for demonstration (currently not included).
+Example usage scripts can be added for demonstration (currently not included). 
 
 ---
 
