@@ -4,7 +4,7 @@ Welcome to this repository, which contains implementations of various optimizati
 
 --- 
  
-## 🚀 Overview 
+## 🚀 Overview
  
 This project provides MATLAB implementations of several classical optimization techniques, including: 
 
