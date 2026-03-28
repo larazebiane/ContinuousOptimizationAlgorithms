@@ -3,7 +3,7 @@
 Welcome to this repository, which contains implementations of various optimization algorithms primarily focused on unconstrained minimization and related methods. This repository is organized into modular folders, each containing different solvers and utilities for solving nonlinear optimization problems.
 
 --- 
-
+ 
 ## 🚀 Overview 
  
 This project provides MATLAB implementations of several classical optimization techniques, including: 
