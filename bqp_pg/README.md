@@ -10,7 +10,7 @@ where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and 
 
 ---
 
-## 🚀 Features
+## 🚀 Features 
 
 - Implements an **inexact Cauchy step** strategy with a backtracking line search.
 - Supports optional **subspace acceleration** (based on active-set identification).
