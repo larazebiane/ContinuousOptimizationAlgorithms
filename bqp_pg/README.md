@@ -8,7 +8,7 @@ $$
 
 where $H$ is symmetric positive definite, and, $\ell$ and $u$ are the lower and upper bounds.
 
---- 
+---
 
 ## 🚀 Features
 
